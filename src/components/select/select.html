@@ -1,0 +1,23 @@
+<div class="dropdown">
+	<button class="btn">Source Type</button>
+
+	<div class="dropdown-menu" hidden>
+    <a class="dropdown-menu__item" href="#">Profile</a> 
+    <a class="dropdown-menu__item" href="#">World</a>
+		<a class="dropdown-menu__item" href="#">Hashtag</a>
+	</div>
+
+	<script>
+    var btnSource = document.querySelector('.btn');
+    var menu = document.querySelector(".dropdown-menu");
+    var dropDownItems = document.querySelectorAll(".dropdown-menu__item");
+    
+    btnSource.onclick = ()=> {
+      if (menu.hasAttribute("hidden")) {
+        menu.removeAttribute("hidden")
+      } else {
+        menu.setAttribute("hidden", true);
+      }
+    };
+	</script>
+</div>
