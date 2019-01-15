@@ -13,45 +13,59 @@
 </head>
 <body>
   <div class="content">
-    
-  <div class="container container--buttons" hidden>
-  <button class="btn-red" type="button">New game</button>
-  <button class="btn-red" type="button">Deposit</button>
-  <button class="btn-red" type="button">Back</button>
-  <button class="btn-red" type="button">Withdraw</button>
+    <div class="container">
+      
+<div class="wrap-btn">
+    <div class="buttons">
+        <button class="btn-red" type="button">New game</button>
+        <button class="btn-red" type="button">Deposit</button>
+        <button class="btn-red" type="button">Back</button>
+        <button class="btn-red" type="button">Withdraw</button>
+    </div>
 </div>
-  <div class="container container--circle" hidden> 
-<div class="border">
-      <div class="circle">
-        <img class="img" src="http://www.dejurka.ru/wp-content/uploads/2013/01/31_illustrator_icon_logo_design_tutorials.png" alt="cards">
-      </div>
+<div class="wrap-circle">
+	<div class="circle-border">
+		<div class="circle">
+			<img
+				class="img"
+				src="http://www.dejurka.ru/wp-content/uploads/2013/01/31_illustrator_icon_logo_design_tutorials.png"
+				alt="cards"
+			/>
+		</div>
+	</div>
 </div>
-</div>
-  <div class="dropdown">
-	<button class="btn">Source Type</button>
+<div class="dropdown">
+	<button class="btn" value="Source Type">Source Type</button>
 
-	<div class="dropdown-menu" hidden>
-    <a class="dropdown-menu__item" href="#">Profile</a> 
+	<div class="dropdown-menu" hidden="true">
+    <a class="dropdown-menu__item" href="#">Profile</a>
     <a class="dropdown-menu__item" href="#">World</a>
 		<a class="dropdown-menu__item" href="#">Hashtag</a>
 	</div>
 
 	<script>
-    var btnSource = document.querySelector('.btn');
-    var menu = document.querySelector(".dropdown-menu");
-    var dropDownItems = document.querySelectorAll(".dropdown-menu__item");
-    
-    btnSource.onclick = ()=> {
-      if (menu.hasAttribute("hidden")) {
-        menu.removeAttribute("hidden")
-      } else {
-        menu.setAttribute("hidden", true);
-      }
-    };
+		var btnSource = document.querySelector('.btn');
+		var menu = document.querySelector('.dropdown-menu');
+		var dropDownItems = document.querySelectorAll('.dropdown-menu__item');
+
+		btnSource.onclick = () => {
+			if (menu.hasAttribute('hidden')) {
+				menu.removeAttribute('hidden');
+			} else {
+				menu.setAttribute('hidden', true);
+			}
+		};
+
+		for (var i = 0; i <= dropDownItems.length; i++) {
+			dropDownItems[i].addEventListener('click', (ev)=> {
+        btnSource.innerHTML = ev.target.innerHTML;
+      }) 
+		}
 	</script>
 </div>
 
 
+    </div>
   </div>
   <script src="index.js"></script>
 </body>
