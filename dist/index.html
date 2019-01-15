@@ -44,13 +44,14 @@
 	</div>
 
 	<script>
-		var btnSource = document.querySelector('.btn');
+		var btn = document.querySelector('.btn');
 		var menu = document.querySelector('.dropdown-menu');
 		var dropDownItems = document.querySelectorAll('.dropdown-menu__item');
 
-		btnSource.onclick = () => {
+		btn.onclick = () => {
 			if (menu.hasAttribute('hidden')) {
 				menu.removeAttribute('hidden');
+				btn.innerHTML = "Source Type";
 			} else {
 				menu.setAttribute('hidden', true);
 			}
@@ -58,7 +59,8 @@
 
 		for (var i = 0; i <= dropDownItems.length; i++) {
 			dropDownItems[i].addEventListener('click', (ev)=> {
-        btnSource.innerHTML = ev.target.innerHTML;
+				btn.innerHTML = ev.target.innerHTML;
+				menu.setAttribute('hidden', true);
       }) 
 		}
 	</script>
